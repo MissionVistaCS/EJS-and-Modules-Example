@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Animals</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+      <% animals.forEach(function(animal, index) {%>
+      
+          <% if (animal.lives > 0) { %>
+          
+              <p><%= animal.name %> has <%= animal.lives %> lives!</p>
+              <input type="button" onclick="location.href='/kill?index=<%= index %>'" value="Finish him"></input>
+              
+          <% } else { %>
+              
+              <p><%= animal.name %> is dead!</p>
+              
+          <% } %>
+          
+      <% }); %>
+  </body>
+</html>
